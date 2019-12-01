@@ -41,6 +41,7 @@ body {
 	font-weight: 600;
 	font-size: 2rem;
 	box-shadow: -3px 3px 3px #464646;
+	overflow: hidden;
 }
 
 .Center-button {
