@@ -95,13 +95,23 @@ body {
 
 .Score {
 	position: absolute;
-	font-weight: 700;
-	color: #efefef;
-	font-size: 3rem;
 	bottom: 0;
 	left: 0;
 	margin: 0.75rem;
+}
+
+.CurrentScore {
+	font-weight: 700;
+	color: #efefef;
+	font-size: 3rem;
 	text-shadow: -2px 2px #222222;
+}
+
+.HighScore {
+	font-weight: 700;
+	color: #efefef;
+	font-size: 2rem;
+	text-shadow: -1.5px 1.5px #222222;
 }
 
 @media only screen and (max-width: 350px) {

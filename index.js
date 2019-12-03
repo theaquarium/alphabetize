@@ -4,6 +4,7 @@ window.addEventListener('load', () => {
 
 	let ready = true;
 	let score = 0;
+	let highScore = 0;
 
 	let top;
 	let topLetter;
@@ -16,7 +17,15 @@ window.addEventListener('load', () => {
 
 	const beforeButton = document.querySelector('.Before');
 	const afterButton = document.querySelector('.After');
-	const scoreCounter = document.querySelector('.Score');
+	const scoreCounter = document.querySelector('.CurrentScore');
+	const highScoreCounter = document.querySelector('.HighScore-score');
+
+	const highScoreNum = Number(localStorage.getItem('highScore'));
+	highScore = isNaN(highScoreNum) ? 0 : highScoreNum;
+	if (highScore !== 0) {
+		let highScoreWord = highScore === 1 ? 'Point' : 'Points';
+		highScoreCounter.innerHTML = highScore + ' ' + highScoreWord;
+	}
 
 	top = document.createElement('div');
 	top.className = 'Part Part-full';
@@ -60,6 +69,12 @@ window.addEventListener('load', () => {
 				score += 1;
 				let word = score === 1 ? 'Point' : 'Points';
 				scoreCounter.innerHTML = score + ' ' + word;
+				if (score > highScore) {
+					highScore = score;
+					let highScoreWord = highScore === 1 ? 'Point' : 'Points';
+					highScoreCounter.innerHTML = highScore + ' ' + highScoreWord;
+					localStorage.setItem('highScore', highScore);
+				}
 
 				let newBottom = document.createElement('div');
 				newBottom.className = 'Part';
@@ -118,6 +133,12 @@ window.addEventListener('load', () => {
 				score += 1;
 				let word = score === 1 ? 'Point' : 'Points';
 				scoreCounter.innerHTML = score + ' ' + word;
+				if (score > highScore) {
+					highScore = score;
+					let highScoreWord = highScore === 1 ? 'Point' : 'Points';
+					highScoreCounter.innerHTML = highScore + ' ' + highScoreWord;
+					localStorage.setItem('highScore', highScore);
+				}
 
 				let newBottom = document.createElement('div');
 				newBottom.className = 'Part';
